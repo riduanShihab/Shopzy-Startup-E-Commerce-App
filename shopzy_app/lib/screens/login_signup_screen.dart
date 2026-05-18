@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:get/get.dart';
 
 class LoginSignupScreen extends StatelessWidget {
   const LoginSignupScreen({super.key});
@@ -179,9 +180,9 @@ class LoginSignupScreen extends StatelessWidget {
                             ),
                             const SizedBox(height: 32),
                             GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacementNamed(context, '/');
-                              },
+                                onTap: () {
+                                  Get.offNamed('/');
+                                },
                               child: Container(
                                 width: double.infinity,
                                 padding: const EdgeInsets.symmetric(

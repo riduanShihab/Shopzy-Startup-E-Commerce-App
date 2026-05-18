@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:get/get.dart';
+import 'your_cart_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../providers/product_provider.dart';
@@ -65,9 +67,13 @@ class HomeFeedPage extends StatelessWidget {
 
   Widget _buildCartIcon(BuildContext context, ColorScheme colors) {
     final cart = Provider.of<CartProvider>(context);
-    return Stack(
-      alignment: Alignment.center,
-      children: [
+    return GestureDetector(
+      onTap: () {
+        Get.to(() => const YourCartScreen());
+      },
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
         Icon(Icons.shopping_bag_outlined, color: colors.primary),
         if (cart.itemCount > 0)
           Positioned(
@@ -89,7 +95,8 @@ class HomeFeedPage extends StatelessWidget {
               ),
             ),
           ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -248,13 +255,7 @@ class HomeFeedPage extends StatelessWidget {
               const SizedBox(height: 16),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          ProductDetailsPage(productId: product.id),
-                    ),
-                  );
+                  Get.to(() => ProductDetailsPage(productId: product.id));
                 },
                 child: Text(
                   'View Details',

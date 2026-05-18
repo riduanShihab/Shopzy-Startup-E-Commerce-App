@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import '../providers/cart_provider.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class CheckoutScreen extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: colors.primary),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Get.back(),
         ),
         title: ShaderMask(
           shaderCallback: (bounds) => LinearGradient(
@@ -398,7 +399,7 @@ class CheckoutScreen extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 cart.clear();
-                Navigator.popUntil(context, ModalRoute.withName('/'));
+                Get.offAllNamed('/');
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Order Placed Successfully!')),
                 );

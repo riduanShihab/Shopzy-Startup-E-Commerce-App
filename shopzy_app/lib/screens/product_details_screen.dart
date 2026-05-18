@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
+import 'your_cart_screen.dart';
 import '../providers/product_provider.dart';
 import '../providers/cart_provider.dart';
 
@@ -32,7 +34,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
         elevation: 0,
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: colors.primary),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Get.back(),
         ),
         actions: [_buildCartIcon(context, colors)],
       ),
@@ -251,9 +253,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     final cart = Provider.of<CartProvider>(context);
     return Padding(
       padding: const EdgeInsets.only(right: 16),
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
+      child: GestureDetector(
+        onTap: () {
+          Get.to(() => const YourCartScreen());
+        },
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
           Icon(Icons.shopping_bag_outlined, color: colors.primary),
           if (cart.itemCount > 0)
             Positioned(
@@ -276,6 +282,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               ),
             ),
         ],
+      ),
       ),
     );
   }

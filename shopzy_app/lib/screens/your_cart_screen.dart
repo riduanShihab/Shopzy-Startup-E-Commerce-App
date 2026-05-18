@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import '../providers/cart_provider.dart';
 
 class YourCartScreen extends StatelessWidget {
@@ -185,7 +186,7 @@ class YourCartScreen extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 if (cart.items.isNotEmpty) {
-                  Navigator.pushNamed(context, '/checkout');
+                  Get.toNamed('/checkout');
                 }
               },
               child: Container(
