@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#009fb4",
+                    "tertiary": "#2fd9f4",
+                    "primary": "#ddb7ff",
+                    "on-primary-fixed-variant": "#6900b3",
+                    "outline-variant": "#4d4354",
+                    "on-secondary-fixed": "#3e0022",
+                    "surface-container-low": "#131b2e",
+                    "on-secondary": "#640039",
+                    "primary-container": "#b76dff",
+                    "primary-fixed": "#f0dbff",
+                    "surface-variant": "#2d3449",
+                    "on-tertiary-fixed-variant": "#004e5a",
+                    "on-primary-fixed": "#2c0051",
+                    "inverse-surface": "#dae2fd",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#001f25",
+                    "inverse-on-surface": "#283044",
+                    "error-container": "#93000a",
+                    "surface-container": "#171f33",
+                    "on-secondary-container": "#ffbad3",
+                    "secondary": "#ffb0cd",
+                    "on-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#2fd9f4",
+                    "surface-container-lowest": "#060e20",
+                    "background": "#0b1326",
+                    "secondary-fixed-dim": "#ffb0cd",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#842bd2",
+                    "tertiary-fixed": "#a2eeff",
+                    "surface-tint": "#ddb7ff",
+                    "on-tertiary": "#00363e",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-container": "#002f36",
+                    "primary-fixed-dim": "#ddb7ff",
+                    "on-surface-variant": "#cfc2d6",
+                    "secondary-fixed": "#ffd9e4",
+                    "secondary-container": "#aa0266",
+                    "surface-container-highest": "#2d3449",
+                    "outline": "#988d9f",
+                    "surface": "#0b1326",
+                    "on-primary": "#490080",
+                    "surface-container-high": "#222a3d",
+                    "on-primary-container": "#400071",
+                    "on-secondary-fixed-variant": "#8c0053",
+                    "surface-dim": "#0b1326"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "1.5rem",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "3rem",
+                    "container-margin": "1.25rem",
+                    "gutter": "1rem"
+            },
+            "fontFamily": {
+                    "display-lg": ["Manrope"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .snap-y-mandatory { scroll-snap-type: y mandatory; }
+        .snap-start { scroll-snap-align: start; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-hidden">
+<!-- TopAppBar: Transparent & Fixed -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-container-margin py-4 bg-transparent">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-95 transition-transform duration-200">menu</span>
+</div>
+<h1 class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Shopzy</h1>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-95 transition-transform duration-200">shopping_bag</span>
+</div>
+</header>
+<!-- Main Feed: Full-screen Vertical Scroll -->
+<main class="h-screen w-full overflow-y-scroll snap-y-mandatory no-scrollbar">
+<!-- Video Feed Item 1 -->
+<section class="relative h-screen w-full snap-start flex-shrink-0">
+<!-- Background Image (Mocking Video) -->
+<div class="absolute inset-0 z-0">
+<img alt="Product Feature" class="w-full h-full object-cover" data-alt="A high-fashion vertical portrait of a model wearing a neon purple oversized streetwear hoodie against a dark, moody urban backdrop. The lighting is cinematic with electric pink and violet rim lights highlighting the fabric textures. The overall aesthetic is sleek and futuristic, utilizing the brand's deep charcoal and vibrant primary gradient palette for a frictionless hype feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0NQH1dhKmdVr5FnSrco8JsIJ2uviabMdKBK8JWSlEYTcrO1BBOTFRVgBpjd9GRAVdSJ9yMKnQn_6fpvhk8pzUNmGnXEU9U7o5oMKU39aXWu_9XD2FHfEO_YK9u4AAc93zxI-drntKAFr7cpndbF3opyLReJ3rzLa5MMCsR1pXpzmgSoVEJE6pZNSlfZjg-b85q9Zn48pArGSnzzLZn-koblZQ3hydV2kkXspLC59iCbqRy3ARy2tmGZfqZ2cWsEKWcbyu1LTs5yI"/>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<!-- Right Side Interaction Hub -->
+<div class="absolute right-4 bottom-32 z-20 flex flex-col items-center gap-6">
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center scale-95 transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<span class="font-label-sm text-label-sm text-white mt-1">2.4k</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center scale-95 transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined text-white">chat_bubble</span>
+</div>
+<span class="font-label-sm text-label-sm text-white mt-1">128</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center scale-95 transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined text-white">share</span>
+</div>
+<span class="font-label-sm text-label-sm text-white mt-1">Share</span>
+</div>
+<!-- Profile Anchor -->
+<div class="w-12 h-12 rounded-full border-2 border-primary overflow-hidden mt-2">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a stylish digital creator with a minimalist aesthetic. The lighting is soft and high-end, featuring subtle purple tones that match the Shopzy brand identity. The background is a clean, dark charcoal grey, emphasizing a professional and expensive digital environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnA35580EcsW1LwD90FIzpM0_849W2uSBueBPxHUflqgyRvJc0i852-YoRiTBlNN1u1CfLALBKSwMii-nTqqCq_Ph_0h75bO0M3u2guGu6A4ctpavyi2s9Fdx7o9b5pMyw3NrFRGvWmv9qpDz6zmTIFqLTlnSqIj6ZqTveGr7EIYTCHsE155wu-iN8_J53QfJBjMFwz8602gxErDHu-1UMehUBtDTWTFS-n7uFAMV5kuyJZAyTsif6lvbNIjYpQtbfPHPHJDXGYHw"/>
+</div>
+</div>
+<!-- Bottom Content Overlay -->
+<div class="absolute bottom-28 left-container-margin right-20 z-20">
+<div class="flex flex-col gap-stack-sm">
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full backdrop-blur-md bg-primary/20 border border-primary/30 font-label-sm text-label-sm text-primary">New In</span>
+<span class="px-3 py-1 rounded-full backdrop-blur-md bg-white/10 border border-white/20 font-label-sm text-label-sm text-white">Limited Drop</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Neon Cyber Hoodie</h2>
+<p class="font-body-md text-white/80 line-clamp-2">Hand-stitched heavy cotton with reflective violet piping. The ultimate piece for the digital generation.</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="font-display-lg text-[24px] text-white">$129.00</span>
+<button class="flex-1 bg-gradient-to-r from-primary-container to-secondary-container text-white py-3 px-6 rounded-full font-label-sm text-label-sm flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                            Quick Add
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Feed Item 2 -->
+<section class="relative h-screen w-full snap-start flex-shrink-0">
+<div class="absolute inset-0 z-0">
+<img alt="Product Detail" class="w-full h-full object-cover" data-alt="A premium close-up of a minimalist black graphic t-shirt with a glowing holographic logo. The fabric texture is crisp and detailed under high-key studio lighting with magenta and cyan color gels. The environment is a stark, dark charcoal space, creating a high-fashion, addictive visual feel consistent with the minimalist and glassmorphic UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjinFz9jgGwKYxDUJf2bOWrRtWjjeW_kkY8802sTdMr_m3J0ab_hTVYHrrHChncwmC23LUKl38lQmFF9-jtIYN0HsKCJ2i3WEKx6o20w0ttsRTiH52vQq3QUynEx6z-YW1zMsrPvQPn7Q2Ir0GdaM2Yu6Lj4TxUCSEJN71Ct7af_ys0SOyL-SrXmdHEgyE_LdBMU50oO6YnMrBPz0KbA0kX0RxkGa8mSDZEzr1S9hm-DYOcFsvQ1Ze78J6xtRS5p4FwXe_EB6aK5w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+<div class="absolute right-4 bottom-32 z-20 flex flex-col items-center gap-6">
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-12 h-12 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-white">favorite</span>
+</div>
+<span class="font-label-sm text-label-sm text-white mt-1">1.8k</span>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-12 h-12 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-white">chat_bubble</span>
+</div>
+<span class="font-label-sm text-label-sm text-white mt-1">42</span>
+</div>
+<div class="flex flex-col items-center cursor-pointer">
+<div class="w-12 h-12 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center scale-95 transition-all duration-300">
+<span class="material-symbols-outlined text-white">share</span>
+</div>
+<span class="font-label-sm text-label-sm text-white mt-1">Share</span>
+</div>
+</div>
+<div class="absolute bottom-28 left-container-margin right-20 z-20">
+<div class="flex flex-col gap-stack-sm">
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full backdrop-blur-md bg-tertiary/20 border border-tertiary/30 font-label-sm text-label-sm text-tertiary">Eco-Conscious</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Holo-Graphic Tee</h2>
+<p class="font-body-md text-white/80 line-clamp-2">Organic bamboo fabric with light-reactive heat press graphics. Breathable, durable, and future-proof.</p>
+<div class="flex items-center gap-4 mt-2">
+<span class="font-display-lg text-[24px] text-white">$55.00</span>
+<button class="flex-1 bg-gradient-to-r from-primary-container to-secondary-container text-white py-3 px-6 rounded-full font-label-sm text-label-sm flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                            Quick Add
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar: Glassmorphic & Fixed -->
+<nav class="fixed bottom-0 left-0 right-0 m-4 rounded-xl z-50 backdrop-blur-xl border border-white/20 bg-surface/10 shadow-2xl h-20 flex justify-around items-center px-4">
+<div class="flex items-center justify-center bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full w-12 h-12 scale-95 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined">home</span>
+</div>
+<div class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary scale-95 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined">search</span>
+</div>
+<div class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary scale-95 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary scale-95 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<div class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary scale-95 transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined">person</span>
+</div>
+</nav>
+</body></html>

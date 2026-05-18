@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#009fb4",
+                    "tertiary": "#2fd9f4",
+                    "primary": "#ddb7ff",
+                    "on-primary-fixed-variant": "#6900b3",
+                    "outline-variant": "#4d4354",
+                    "on-secondary-fixed": "#3e0022",
+                    "surface-container-low": "#131b2e",
+                    "on-secondary": "#640039",
+                    "primary-container": "#b76dff",
+                    "primary-fixed": "#f0dbff",
+                    "surface-variant": "#2d3449",
+                    "on-tertiary-fixed-variant": "#004e5a",
+                    "on-primary-fixed": "#2c0051",
+                    "inverse-surface": "#dae2fd",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#001f25",
+                    "inverse-on-surface": "#283044",
+                    "error-container": "#93000a",
+                    "surface-container": "#171f33",
+                    "on-secondary-container": "#ffbad3",
+                    "secondary": "#ffb0cd",
+                    "on-surface": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#2fd9f4",
+                    "surface-container-lowest": "#060e20",
+                    "background": "#0b1326",
+                    "secondary-fixed-dim": "#ffb0cd",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#842bd2",
+                    "tertiary-fixed": "#a2eeff",
+                    "surface-tint": "#ddb7ff",
+                    "on-tertiary": "#00363e",
+                    "on-background": "#dae2fd",
+                    "on-tertiary-container": "#002f36",
+                    "primary-fixed-dim": "#ddb7ff",
+                    "on-surface-variant": "#cfc2d6",
+                    "secondary-fixed": "#ffd9e4",
+                    "secondary-container": "#aa0266",
+                    "surface-container-highest": "#2d3449",
+                    "outline": "#988d9f",
+                    "surface": "#0b1326",
+                    "on-primary": "#490080",
+                    "surface-container-high": "#222a3d",
+                    "on-primary-container": "#400071",
+                    "on-secondary-fixed-variant": "#8c0053",
+                    "surface-dim": "#0b1326"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "1.5rem",
+                    "stack-sm": "0.5rem",
+                    "stack-lg": "3rem",
+                    "container-margin": "1.25rem",
+                    "gutter": "1rem"
+            },
+            "fontFamily": {
+                    "display-lg": ["Manrope"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md overflow-hidden">
+<!-- Auth Shell Suppression: TopAppBar and BottomNavBar are hidden per JSON logic for transactional screens -->
+<main class="flex-grow flex items-center justify-center p-container-margin relative overflow-hidden">
+<!-- Abstract Background Elements -->
+<div class="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-primary-container/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-secondary-container/20 rounded-full blur-[120px]"></div>
+<div class="w-full max-w-md z-10">
+<!-- Brand Anchor -->
+<div class="flex flex-col items-center mb-stack-lg">
+<h1 class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-stack-sm">Shopzy</h1>
+<p class="text-on-surface-variant text-center px-8">Elevate your digital lifestyle with the next generation of curated essentials.</p>
+</div>
+<!-- Login/Signup Card -->
+<div class="glass p-8 rounded-xl space-y-stack-md">
+<div class="space-y-stack-sm">
+<label class="block font-label-sm text-label-sm text-on-surface/60 px-2">EMAIL ADDRESS</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface placeholder:text-on-surface/30 focus:ring-1 focus:ring-primary transition-all" placeholder="hello@shopzy.com" type="email"/>
+</div>
+<div class="space-y-stack-sm">
+<label class="block font-label-sm text-label-sm text-on-surface/60 px-2">PASSWORD</label>
+<input class="w-full bg-surface-container-high border-none rounded-lg p-4 text-on-surface placeholder:text-on-surface/30 focus:ring-1 focus:ring-primary transition-all" placeholder="••••••••" type="password"/>
+</div>
+<!-- Primary CTA -->
+<button class="w-full py-4 rounded-full bg-gradient-to-r from-primary-container to-secondary-container text-on-primary font-bold text-lg active:scale-95 transition-transform duration-200 mt-4">
+                    Join the Club
+                </button>
+<!-- Divider -->
+<div class="flex items-center gap-4 py-4">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<span class="text-label-sm font-label-sm text-on-surface/40">OR CONTINUE WITH</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-gutter">
+<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-high rounded-full border border-white/5 active:scale-95 transition-transform hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[20px]">apps</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Apple</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-high rounded-full border border-white/5 active:scale-95 transition-transform hover:bg-surface-variant">
+<!-- Custom Icon logic for Socials -->
+<span class="material-symbols-outlined text-[20px]">google</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Google</span>
+</button>
+</div>
+</div>
+<!-- Footer Links -->
+<div class="mt-stack-lg text-center space-y-4">
+<p class="text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="text-primary font-semibold hover:underline" href="#">Create one now</a>
+</p>
+<div class="flex justify-center gap-6">
+<a class="text-label-sm font-label-sm text-on-surface/40 hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="text-label-sm font-label-sm text-on-surface/40 hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Decorative Image Feed Background (Simulating "Hype" Generation) -->
+<div class="fixed inset-0 -z-20 opacity-20 pointer-events-none">
+<div class="grid grid-cols-3 gap-4 p-4 transform -rotate-12 scale-125">
+<div class="aspect-[9/16] rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-fashion vertical portrait of a model wearing neon-accented streetwear in a dark, futuristic urban environment. The lighting is dominated by deep purple and hot pink highlights, creating a vibrant glassmorphic aesthetic. The mood is high-energy, modern, and expensive, perfectly aligning with a premium digital shopping ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2B_qhpuZdmSFpoB9LmY2zpcidlz4gzKmgKTsY-nUfoh9wTqcedqz3hKDUSAqm-de_U3gYFbx9HOOUFEcPdkyQ32nxV0zQMsg5DBlu50hzOH3gZqp2UcIZ-sjRse8Wmje4TWVvGicUdXezIkiwVtoXJxD2VsCk4WYzl9nAiKTbL4gdQysTqYGbzLOJEJer5cCuCyWIFxQJrG2oqt6LtUpipDMlhMrDNflqPIjePGGHYmSLm-UzPn5QkkLe3IrNe4sQ6bW7ezef9kQ"/>
+</div>
+<div class="aspect-[9/16] rounded-lg overflow-hidden translate-y-20">
+<img class="w-full h-full object-cover" data-alt="A cinematic close-up of a luxury designer sneaker resting on a polished charcoal reflective surface. The image uses sharp, high-contrast lighting with electric blue rim lights and deep shadows to emphasize texture and craftsmanship. The atmosphere is minimalist and sophisticated, reflecting a high-end digital storefront's brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9wOiNf-C4iVYuapzwL1p-Pm6sWDecnxejIQaaGU6bZ__bgQ7BYSM1wU7XqGJ4HknbJtouwMcKMMKIyp22UFYZM4wMNfnLq_rbKw2PZPx3VAiT0J4d-3FsS4udNCxM5qSYf9XW_I6EjnHZ3B2rtN6NvgS8Gt3B2BV5b5VD3X4MeZxWs0TE_jH-JVq55GNxlj2tzQUhXlCsmetHPlyhEu21HlLLAfZeEDmbQQAwmZgNKgAI22vOS2yYBnyngnHfPhSquEh3q3QpIwQ"/>
+</div>
+<div class="aspect-[9/16] rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An artistic flat-lay of modern lifestyle accessories including a minimalist watch and sleek earbuds on a textured dark background. Soft glow from a nearby neon source casts ethereal purple and pink shadows across the arrangement. The visual style is crisp and clean, embodying frictionless high-fashion aesthetics for a mobile generation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7ywQrScr51Y87VqfvUkx7QcYPaxt368nXc-pD6ths1jqMXaqrBFuHnd-xhh-miYhFIRRiwLLttwxu2KnwL_fJIzR02-51Vyi6pB1J5ctDiZ7ovu1iBHsnLxawfVT0NH342TZsjI-2CJ_zMhzfzrlBs4VqWLR873qj8grFwLAohNffYHF_u3m48YdUcjyvIOslpo1NjQqO76JZv1CEESwLQ8fXgbm9rRIWajdslAl_7qPM0O-wNx-e8y-Mnji21AAx298eGfFrk0M"/>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-container": "#009fb4",
+                  "tertiary": "#2fd9f4",
+                  "primary": "#ddb7ff",
+                  "on-primary-fixed-variant": "#6900b3",
+                  "outline-variant": "#4d4354",
+                  "on-secondary-fixed": "#3e0022",
+                  "surface-container-low": "#131b2e",
+                  "on-secondary": "#640039",
+                  "primary-container": "#b76dff",
+                  "primary-fixed": "#f0dbff",
+                  "surface-variant": "#2d3449",
+                  "on-tertiary-fixed-variant": "#004e5a",
+                  "on-primary-fixed": "#2c0051",
+                  "inverse-surface": "#dae2fd",
+                  "error": "#ffb4ab",
+                  "on-tertiary-fixed": "#001f25",
+                  "inverse-on-surface": "#283044",
+                  "error-container": "#93000a",
+                  "surface-container": "#171f33",
+                  "on-secondary-container": "#ffbad3",
+                  "secondary": "#ffb0cd",
+                  "on-surface": "#dae2fd",
+                  "surface-bright": "#31394d",
+                  "on-error": "#690005",
+                  "tertiary-fixed-dim": "#2fd9f4",
+                  "surface-container-lowest": "#060e20",
+                  "background": "#0b1326",
+                  "secondary-fixed-dim": "#ffb0cd",
+                  "on-error-container": "#ffdad6",
+                  "inverse-primary": "#842bd2",
+                  "tertiary-fixed": "#a2eeff",
+                  "surface-tint": "#ddb7ff",
+                  "on-tertiary": "#00363e",
+                  "on-background": "#dae2fd",
+                  "on-tertiary-container": "#002f36",
+                  "primary-fixed-dim": "#ddb7ff",
+                  "on-surface-variant": "#cfc2d6",
+                  "secondary-fixed": "#ffd9e4",
+                  "secondary-container": "#aa0266",
+                  "surface-container-highest": "#2d3449",
+                  "outline": "#988d9f",
+                  "surface": "#0b1326",
+                  "on-primary": "#490080",
+                  "surface-container-high": "#222a3d",
+                  "on-primary-container": "#400071",
+                  "on-secondary-fixed-variant": "#8c0053",
+                  "surface-dim": "#0b1326"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "stack-md": "1.5rem",
+                  "stack-sm": "0.5rem",
+                  "stack-lg": "3rem",
+                  "container-margin": "1.25rem",
+                  "gutter": "1rem"
+          },
+          "fontFamily": {
+                  "display-lg": ["Manrope"],
+                  "label-sm": ["Inter"],
+                  "body-md": ["Inter"],
+                  "headline-lg-mobile": ["Manrope"],
+                  "headline-lg": ["Manrope"]
+          },
+          "fontSize": {
+                  "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                  "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                  "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                  "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-32">
+<!-- TopAppBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-container-margin py-4">
+<div class="flex items-center gap-4">
+<button class="text-primary opacity-80 scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Shopzy</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary opacity-80 scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Full-Bleed Product Gallery -->
+<section class="w-full relative overflow-hidden">
+<div class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar">
+<div class="flex-none w-full snap-start aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="A high-fashion studio shot of a luxurious oversized wool coat in a deep charcoal color, draped elegantly on a mannequin. The lighting is cinematic with sharp highlights and deep shadows, reflecting a premium streetwear aesthetic. The background is a clean, dark minimalist space that emphasizes the texture of the fabric. The overall mood is sophisticated and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBICmDNnuHWZ7mh7sFprs-vFkrIF-j5CPG0nT3Pp6zspct02OMVw7yxfOLivNIviLlFMns78skPBxu_EDy-Tg3ulORddz_j9KOvMMQ4JT_1He5GItKQ1-qVwYYAVBxBbiebEdNXfC9_Kn79b-nWUcdlMYuSmHfZLG2rSVhC0DXEFTgWuP7IHblp8zKuF8w6VRmgdz_kQD2kmF15FY8QsIEXLG0r9B1DImGtcV-c0WovgALUe4Z1wOZeIjnx30V9k8Mm6073rY3YzXY"/>
+</div>
+<div class="flex-none w-full snap-start aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="Detailed close-up of a high-quality wool fabric texture with visible weaving patterns. The shot uses macro photography to highlight the intricate details of the material against a dark, moody background. Soft, directional purple light creates depth and dimension across the surface. This visual focuses on the craftsmanship and expensive feel of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3hyxH1is8F7aTUQL3fP_-gCFb45PzLKPrtSll3uXQBFq_-yY5ZSsUjExlFyo-THh1tsh4PRI0q9-Io6FT48soz_DkK3c94KIEo6tDSsmhxVoGT5pEYjyv7705TwkWQYXWQc4hGtu73iPlQZA2LKNPR-qmpeaaAWbb5y5bJisyknEiROib0AEettd6T3FchPyttrbhEp10sgGFrFWliirkT-A5l-rND0WiKBOFW2spM7JTVxr8dz4qBl4tJ4-J14BduGVRDKSbHkA"/>
+</div>
+</div>
+<!-- Gallery Pagination Dots -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+<div class="w-2 h-2 rounded-full bg-white/20"></div>
+</div>
+</section>
+<!-- Product Header -->
+<section class="px-container-margin mt-stack-md">
+<div class="flex justify-between items-start">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Noir Wool Overcoat</h1>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">$495</span>
+</div>
+<div class="flex items-center gap-2 mt-stack-sm">
+<div class="flex text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface/60">4.8 (124 REVIEWS)</span>
+</div>
+</section>
+<!-- Selection Section -->
+<section class="px-container-margin mt-stack-lg space-y-6">
+<div>
+<span class="font-label-sm text-label-sm block mb-3 text-on-surface/60">SELECT SIZE</span>
+<div class="flex gap-3">
+<button class="w-12 h-12 rounded-full flex items-center justify-center border border-primary text-primary font-label-sm text-label-sm">S</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center border border-white/10 text-on-surface font-label-sm text-label-sm">M</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center border border-white/10 text-on-surface font-label-sm text-label-sm">L</button>
+<button class="w-12 h-12 rounded-full flex items-center justify-center border border-white/10 text-on-surface font-label-sm text-label-sm">XL</button>
+</div>
+</div>
+</section>
+<!-- Detailed Reviews Section (TikTok-style User Content focus) -->
+<section class="mt-stack-lg">
+<div class="px-container-margin flex justify-between items-end mb-6">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Community Style</h2>
+<span class="font-label-sm text-label-sm text-primary">VIEW ALL</span>
+</div>
+<!-- Horizontal Scroll of User Photos -->
+<div class="flex gap-4 overflow-x-auto px-container-margin hide-scrollbar">
+<div class="flex-none w-48 aspect-[9/16] rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="A trendy street style photograph of a woman wearing the noir wool overcoat in an urban setting. The lighting is natural evening light with a warm glow. She is standing against a minimalist concrete wall, showcasing how the coat fits in a real-world environment. The image has a professional yet candid social media aesthetic with high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQtqMeMzg1gLMzzI5V7gorPvHShVfQnfcPVZdMk7JDE8nzsU_MW6Id6rcOoik6ND2H4H8GITjsW8kHqydp3Bv8qQakF9kA11BT5RNb1JUixG0v6pw7KZcVp-6Buv_zsS2Azq9-uFT54ijpj7jjhZSkEVJTKOlL03REpKrXgdbaxZ8f9Wep_pICLKUPvxwrp9TUazViv8hAvv1CVnICVAf2heL0uIJsbtPvjJbNr_6dowbm7UMbmeSg0YD8LgBfqVY0I2UhSmH-2A4"/>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur-md border border-white/40 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYV5VzBSSyWUx4hxPMHj-l-AqX1J7yf0cQuDH21cw_YGHNKYZWDw6GuFDFjWnrIP1oqrMRFfUymZNC4zPPIOX3lS_wn0_zMlQnF6ioLPCKBwmd-i9TCA3UBE2Oq5J0V_tee0soEupdy18SXL0Y8Raqe-5t89S64LTvl1TMyw-Td1UzJ18NEAmTc_BEJs4Hy8Q7BecP2WMv13jfIeyD86_AuztBXADSql0C-ya_qHAMXKEarJFjt6VYjwbsgeg14Biw9zucaRC00Nc"/>
+</div>
+<span class="font-label-sm text-[10px] text-white">@alexa_v</span>
+</div>
+</div>
+<div class="flex-none w-48 aspect-[9/16] rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="A portrait-oriented photograph of a male model wearing the noir coat over a black hoodie, styled for a modern street look. The setting is a moody metropolitan alleyway at night with vibrant neon purple and pink lighting reflecting off wet pavement. The composition is dynamic and edgy, focusing on the versatility of the garment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs4KIvZSYOauvOUXQABMLaNN0QgZptKT1-6Pt8EHbNZrb0jTzna-nb6aAe7hOPyOc5YuebBNIyuwuXisVxZowogPibbX67baNZlcW137ksGZafzl_fRvLE3S9an_c3HspXaT5AfrLTrjWuLuGRFVfpMKGO6shDvJBT-uZ-0K4QvSyYei3Q-mz9TzrUt7Hl7O1T3NVKDHM05HZopXUyldPapyP9mW8DyHNo2Xa1T93IYcLc6xeUIImuQxWDWWxGHslKAIHz8iBVOBk"/>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur-md border border-white/40 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3eWKueJCMsV1QEBNTCq0gPnVJWYZR-hgimCYNe8B2t_IZOu88z6F4xcXedJnUb5pc3H9FHD-eH9KV3v5YqnOj_UD1O6MBbEo9gXX4GEgusS-GFEIX1NETJ7-qmFSne6YOTvBXQQRD8GU1TDU80qBHAQ2X4869Fcph5W-odcGBWqpkJpLpQJU5wGA-iNZZmagATxW6E3WHeycTzrQsdIu0gaWJej4wR_fgiR2OAwLWcRLMdADSuxxBJ4RQUIwt73gxP4gxhTgq1F8"/>
+</div>
+<span class="font-label-sm text-[10px] text-white">@marcus_m</span>
+</div>
+</div>
+<div class="flex-none w-48 aspect-[9/16] rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="Fashion-forward shot of a person walking across a modern glass bridge, wearing the noir overcoat. The lighting is bright and clean with a high-key aesthetic. The movement of the coat is captured in a blurred motion effect, emphasizing the flow and quality of the wool material. The color palette is strictly monochromatic blacks and whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8BIVj6LVXE2SSaI-twJL7b2Zlu5D5RNs7tvXkxkIq_m39l4azed71shBvTILkTaJE-2Cz-2fHon-58qRKf4Kqy0NRDkOPulonzd6sxbhIt6-rIeIJAT-dNL2kK0CglWuIxgJILAo5hFvcPz-gWQdyKTGVXhQAqNvD8X76J2EwmknvgxBlcAaA83t7SMakOdS8ghKiYFEUntjoXUyRrkQRH4MkyLiSI2vXQgDFHmUN5YRIpk0qPaqu71dTOZVrTTpAYFP1Ci988Yg"/>
+<div class="absolute bottom-3 left-3 flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-white/20 backdrop-blur-md border border-white/40 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0foi2LB99X-1WsG0Ay11XJlFPWRM1fRG-u0Om7VBXTn37zlKp5hfbp4JIIiptX6KaiOlifoAkimoLVNY7XOclKvfQNmdgQXzFKDyRnJjqXtUgNwoC-iey31lpbK0sJu9NssX0K_oFdxjPVKcjJTcXpAT1DBbKd08WHl3HDqStMVAIpEbckIOQKlYjHw4cZcxWj4aB1y09ohiRs9LfXYNR8KXGU8kfOQirDajsSm6E1uXS9FJujQH2O44x8Vmkz5j4Fb5kqk5Ep0g"/>
+</div>
+<span class="font-label-sm text-[10px] text-white">@sophia_style</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento-style Review Grid -->
+<section class="px-container-margin mt-stack-lg space-y-4">
+<div class="glass-card p-6 rounded-lg">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center font-bold text-primary">J</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Jordan S.</p>
+<p class="text-[10px] text-on-surface/40 uppercase tracking-widest">Verified Buyer</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface/80">"The weight of this wool is incredible. Feels much more expensive than the price point suggests. Perfect fit."</p>
+</div>
+<div class="glass-card p-6 rounded-lg">
+<div class="flex justify-between items-center mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-white/10 flex items-center justify-center font-bold text-secondary">E</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface">Elena K.</p>
+<p class="text-[10px] text-on-surface/40 uppercase tracking-widest">Verified Buyer</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface/80">"Absolutely obsessed with the silhouette. It's that perfect oversized look without being bulky. 10/10."</p>
+</div>
+</section>
+</main>
+<!-- Floating Add to Cart Button -->
+<div class="fixed bottom-10 left-1/2 -translate-x-1/2 w-full max-w-xs px-container-margin z-50">
+<button class="w-full h-16 rounded-full bg-gradient-to-r from-primary-container via-secondary-container to-secondary text-white font-bold tracking-tight shadow-2xl flex items-center justify-center gap-3 scale-95 transition-all duration-300 active:scale-90">
+<span class="material-symbols-outlined">shopping_cart</span>
+      ADD TO CART
+    </button>
+</div>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 right-0 m-4 rounded-xl z-50 bg-surface/10 backdrop-blur-xl border border-white/20 shadow-2xl flex justify-around items-center h-20 px-4 md:hidden">
+<button class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="flex items-center justify-center bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full w-12 h-12 scale-95">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+</body></html>

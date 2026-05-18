@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#009fb4",
+                        "tertiary": "#2fd9f4",
+                        "primary": "#ddb7ff",
+                        "on-primary-fixed-variant": "#6900b3",
+                        "outline-variant": "#4d4354",
+                        "on-secondary-fixed": "#3e0022",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary": "#640039",
+                        "primary-container": "#b76dff",
+                        "primary-fixed": "#f0dbff",
+                        "surface-variant": "#2d3449",
+                        "on-tertiary-fixed-variant": "#004e5a",
+                        "on-primary-fixed": "#2c0051",
+                        "inverse-surface": "#dae2fd",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#001f25",
+                        "inverse-on-surface": "#283044",
+                        "error-container": "#93000a",
+                        "surface-container": "#171f33",
+                        "on-secondary-container": "#ffbad3",
+                        "secondary": "#ffb0cd",
+                        "on-surface": "#dae2fd",
+                        "surface-bright": "#31394d",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#2fd9f4",
+                        "surface-container-lowest": "#060e20",
+                        "background": "#0b1326",
+                        "secondary-fixed-dim": "#ffb0cd",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#842bd2",
+                        "tertiary-fixed": "#a2eeff",
+                        "surface-tint": "#ddb7ff",
+                        "on-tertiary": "#00363e",
+                        "on-background": "#dae2fd",
+                        "on-tertiary-container": "#002f36",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "on-surface-variant": "#cfc2d6",
+                        "secondary-fixed": "#ffd9e4",
+                        "secondary-container": "#aa0266",
+                        "surface-container-highest": "#2d3449",
+                        "outline": "#988d9f",
+                        "surface": "#0b1326",
+                        "on-primary": "#490080",
+                        "surface-container-high": "#222a3d",
+                        "on-primary-container": "#400071",
+                        "on-secondary-fixed-variant": "#8c0053",
+                        "surface-dim": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "1.5rem",
+                        "stack-sm": "0.5rem",
+                        "stack-lg": "3rem",
+                        "container-margin": "1.25rem",
+                        "gutter": "1rem"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Manrope"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .swipe-action {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #93000a;
+            color: white;
+            z-index: 0;
+            border-radius: 1.5rem;
+        }
+        .cart-item-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+        .cart-item-content {
+            position: relative;
+            z-index: 10;
+            transition: transform 0.3s ease;
+        }
+        body {
+            background-color: #060e20;
+            color: #dae2fd;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-container-margin py-4">
+<div class="flex items-center gap-4">
+<button class="text-primary scale-95 transition-transform duration-200 opacity-80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Shopzy</h1>
+</div>
+<button class="text-primary scale-95 transition-transform duration-200 opacity-80 relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary-container text-on-secondary-container text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
+</button>
+</header>
+<main class="pt-24 px-container-margin">
+<section class="mb-stack-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-stack-sm">Your Cart</h2>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Review your selections and head to checkout.</p>
+</section>
+<!-- Cart List -->
+<div class="flex flex-col gap-gutter">
+<!-- Item 1 -->
+<div class="cart-item-container group">
+<div class="swipe-action">
+<span class="material-symbols-outlined">delete</span>
+</div>
+<div class="cart-item-content bg-surface-container-high p-4 flex gap-4 transition-transform active:-translate-x-20">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sleek, high-end minimalist white smartwatch displayed against a dark, moody background with subtle purple rim lighting. The product photography is sharp and professional, emphasizing the smooth textures and refined curves of the gadget. The aesthetic is ultra-modern and tech-focused, perfectly aligning with a luxury digital lifestyle brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0uE_whhfBziM8jQgKzOodoZ-g5sTNXGAHSHYozbc9WtEszAtEaNf9hr-t57yn58WLEicJVgfTQNXUu08lds-uufZhcO6MXT_azJHdTH6NJk4AUBmwhDIYppTFmqIptlSV-7kzGzlEUHAMUiACKv2wVtD9kB1jWqUcYxV4XqyIsq157N8otFP5HHDM6IjtyuT_44y4TDXpuguCeEq-nE3IPWXiB_5BPmixQ8YQ_2WLyzGdCuOfk6PPrmAFcI9zLwFjCC_WmxNmbHA"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-lg-mobile text-[18px] text-on-surface">Nexus Watch v2</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Silver / 44mm</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-lg-mobile text-[20px] text-primary">$299.00</span>
+<div class="flex items-center gap-3 bg-surface-container-highest rounded-full px-3 py-1">
+<button class="text-on-surface opacity-60"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-label-sm text-label-sm">1</span>
+<button class="text-on-surface"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="cart-item-container group">
+<div class="swipe-action">
+<span class="material-symbols-outlined">delete</span>
+</div>
+<div class="cart-item-content bg-surface-container-high p-4 flex gap-4 transition-transform active:-translate-x-20">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Premium over-ear noise-canceling headphones in matte black, positioned dramatically in a high-contrast studio setting. The lighting highlights the premium leather earcups and sleek metallic accents with a touch of electric pink neon glow. The overall mood is immersive and high-fidelity, conveying a sense of expensive, high-fashion audio equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQu5OsP2xFa_5NMTDE0IxWSPmzct2KzgsdEDe-SrM98CyLhQ0EFAHS4RfMnrKDxbVsKFEOmWJKLxGmbVx7peyiwwvRRgB-8Kt8G0XOFhxObIntLQEZB_axm8cwSSwMjIoZ3oULJQFi2z6B8cpuYhwpWxp8li8bqY75Igv7zmQstzUqznrK_iD1K1kFCAc4Pj37kdZGLOh9OKielS8_XYlNWWvJpayQlbBn5GvThSs8ASsHm_rJkeyS8pb_neIpvHj0bQfNNdFacTI"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-lg-mobile text-[18px] text-on-surface">Studio-X Pro</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Matte Black</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-lg-mobile text-[20px] text-primary">$349.00</span>
+<div class="flex items-center gap-3 bg-surface-container-highest rounded-full px-3 py-1">
+<button class="text-on-surface opacity-60"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-label-sm text-label-sm">1</span>
+<button class="text-on-surface"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="cart-item-container group">
+<div class="swipe-action">
+<span class="material-symbols-outlined">delete</span>
+</div>
+<div class="cart-item-content bg-surface-container-high p-4 flex gap-4 transition-transform active:-translate-x-20">
+<div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Vibrant red performance running shoes captured in mid-air to simulate motion. The background is a dark, textured charcoal that makes the bright color pop. High-speed photography captures fine details of the mesh and sole, while a subtle magenta light streak adds a sense of kinetic energy and high-performance engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-r-vijSM_JXVyd1tVRAC7A4WUNxzHNC4NHKXHnttf4rz_ERVwMqFkN7Kg3OG-7LQeQRaEk1Jb5gqOscFCiTY8i7C7_ukIUVdXjIDxqlANl341_HDQ3j8fQnL14FW_f2yZYyyp7jSKseOXR6ocRlZ7K3Yg_LTfVpttASF47CFnVh_dKUFWZjfmwxeRhftxvspvW-_5vlU9naf_Uq6A6FYHCfdeOrUMFFS5DFSQ_BEs2iIrT71rtInM_9kEUhaMy20QGDnR-CZoIkE"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-lg-mobile text-[18px] text-on-surface">Velo-City Runner</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Crimson / Size 10</p>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-lg-mobile text-[20px] text-primary">$120.00</span>
+<div class="flex items-center gap-3 bg-surface-container-highest rounded-full px-3 py-1">
+<button class="text-on-surface opacity-60"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-label-sm text-label-sm">2</span>
+<button class="text-on-surface"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Section -->
+<section class="mt-stack-lg glass-card p-6 rounded-lg space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-on-surface">$888.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-body-md text-on-surface-variant">Shipping</span>
+<span class="font-body-md text-body-md text-tertiary">FREE</span>
+</div>
+<div class="pt-4 border-t border-white/10 flex justify-between items-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">Total</span>
+<span class="font-display-lg text-[32px] text-primary">$888.00</span>
+</div>
+</section>
+<!-- Main Action -->
+<div class="mt-stack-md">
+<button class="w-full h-16 bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline-lg-mobile text-headline-lg-mobile rounded-full shadow-lg shadow-primary/20 scale-95 transition-all duration-300 active:scale-90 flex items-center justify-center gap-3">
+                Checkout
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="text-center mt-4 font-label-sm text-label-sm text-on-surface-variant opacity-50 uppercase tracking-widest">Secure encrypted payment</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 m-4 rounded-xl z-50 bg-surface/10 backdrop-blur-xl border border-white/20 shadow-2xl flex justify-around items-center h-20 px-4">
+<a class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300 ease-in-out scale-95" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300 ease-in-out scale-95" href="#">
+<span class="material-symbols-outlined">search</span>
+</a>
+<a class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300 ease-in-out scale-95" href="#">
+<span class="material-symbols-outlined">favorite</span>
+</a>
+<a class="flex items-center justify-center bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full w-12 h-12 transition-all duration-300 ease-in-out scale-95" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<a class="flex items-center justify-center text-on-surface/60 w-12 h-12 hover:text-primary transition-all duration-300 ease-in-out scale-95" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+</body></html>

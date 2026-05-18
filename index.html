@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Public+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#faf9f5",
+                    "on-tertiary-container": "#e0a578",
+                    "tertiary-fixed": "#ffdcc3",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#663d18",
+                    "secondary-fixed": "#c7e7ff",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#a2d8ff",
+                    "inverse-primary": "#adcfae",
+                    "surface-container-high": "#e9e8e4",
+                    "background": "#faf9f5",
+                    "surface-variant": "#e3e2df",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#001e2e",
+                    "secondary-fixed-dim": "#97cdf3",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#98ba9a",
+                    "tertiary": "#492503",
+                    "surface-tint": "#47664b",
+                    "outline": "#737971",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#f2f1ed",
+                    "primary": "#17341d",
+                    "primary-container": "#2d4b32",
+                    "outline-variant": "#c2c8bf",
+                    "surface-container-highest": "#e3e2df",
+                    "primary-fixed-dim": "#adcfae",
+                    "tertiary-fixed-dim": "#f7ba8b",
+                    "primary-fixed": "#c8ecc9",
+                    "on-tertiary-fixed": "#2f1500",
+                    "surface-container-low": "#f4f4f0",
+                    "on-primary-fixed-variant": "#2f4d34",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#245f80",
+                    "inverse-surface": "#2f312e",
+                    "on-error": "#ffffff",
+                    "surface-container": "#efeeea",
+                    "on-surface-variant": "#424842",
+                    "tertiary-container": "#633a16",
+                    "on-background": "#1b1c1a",
+                    "surface-dim": "#dbdad6",
+                    "surface": "#faf9f5",
+                    "on-primary-fixed": "#03210c",
+                    "on-surface": "#1b1c1a",
+                    "secondary": "#2a6485",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#034c6c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Work Sans"],
+                    "label-md": ["JetBrains Mono"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-lg": ["Work Sans"],
+                    "body-lg": ["Public Sans"],
+                    "headline-lg-mobile": ["Work Sans"],
+                    "headline-lg": ["Work Sans"],
+                    "body-md": ["Public Sans"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="bg-surface docked full-width top-0 sticky z-50 border-b border-outline-variant/15 flex justify-between items-center w-full px-margin-mobile h-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary active:scale-95 duration-200 ease-in-out cursor-pointer" data-icon="menu">menu</span>
+<h1 class="text-headline-md font-headline-md font-bold tracking-tight text-primary">AVES GEAR</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary active:scale-95 duration-200 ease-in-out cursor-pointer" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</header>
+<main class="max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="relative w-full aspect-[4/5] md:aspect-[21/9] overflow-hidden">
+<img alt="Expert Birder" class="w-full h-full object-cover" data-alt="A professional birdwatcher standing in a misty, early morning meadow surrounded by tall grasses and ancient oak trees. The lighting is soft and golden, capturing a serene and adventurous atmosphere. The birder is equipped with high-end forest green binoculars and a technical outdoor jacket, looking focused yet peaceful. The color palette emphasizes deep earth greens and soft parchment highlights, maintaining a corporate and tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYtSbbS3l2qRRL9h7jlqPLI4xj9zEPOMXQETH_PaELmGq4YB99jU9IlB3yfAvqtU-JdD8aOVNlGvyJR9_iEvxLznakZaHdm7p0DJpZuyWYQsKbNgBcU6rbyBnAK0-J52tVKlOIN_RhBNWMt30Fo9BHdfWV7ivl4RpLapKVtZiTaOAtebXFVwzxIC_L6x9GQzapnLbIYI2n2xNq5KcRKAcCIPhcxDtx9niJTJMYmyoShmj6PWcIiVtvN2N51qhUbK6mcqzjmvEytT4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-margin-mobile pb-12">
+<h2 class="text-white font-headline-lg-mobile text-headline-lg-mobile mb-4 max-w-xs">Precision Gear for the Patient Watcher.</h2>
+<button class="bg-primary text-white w-fit px-8 py-4 font-label-md text-label-md rounded-lg active:scale-95 transition-all duration-200 hover:bg-primary-container">
+                    Shop New Arrivals
+                </button>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-12 px-margin-mobile overflow-x-auto no-scrollbar">
+<div class="flex justify-between items-start gap-6 min-w-max md:justify-center md:gap-12">
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant/15 flex items-center justify-center hover:bg-primary/5 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="telescope">file_copy</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Binoculars</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant/15 flex items-center justify-center hover:bg-primary/5 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="filter_center_focus">filter_center_focus</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Spotting Scopes</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant/15 flex items-center justify-center hover:bg-primary/5 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="menu_book">menu_book</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Field Guides</span>
+</div>
+<div class="flex flex-col items-center gap-3">
+<div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline-variant/15 flex items-center justify-center hover:bg-primary/5 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="apparel">apparel</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Apparel</span>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section class="px-margin-mobile py-8 bg-surface-container-low">
+<div class="flex justify-between items-end mb-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Featured Gear</h3>
+<a class="text-secondary font-label-md text-label-md underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Product 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-3 flex flex-col gap-3 group">
+<div class="relative aspect-square overflow-hidden bg-surface-variant">
+<img alt="Eagle-Eye Binoculars" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up studio photography of professional high-grade binoculars with multi-coated lenses. The object is set against a clean, off-white studio background with subtle soft shadows. The binoculars feature a textured forest green finish and black rubberized details. The image is crisp, highlighting the precision engineering and high-end materials used in birdwatching equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9RMqbn__WxN6Urzvb2dsAKdi3PGge0ZuE_ZY7J-WFt0KEzFe6jUWQecRkmX2XJTy22iVE9IjpONujxSAFsa51KjY3Wz5jamQoP0buYo0odXJqKBol2V7J94ofrjZf2Eaj-jE5-StbgkJu7Jb-quPMfh7LVx-Q8WQCBmz4AVF9k0te6P37IHc1MFd79z1cLOse-y-JcSo1yYhjPmtWn9HScDOZRdevZhfVf3dhP8X0_-wbu4K5zeO-5VZh7U15lRU5bW7CRe7LSBI"/>
+<div class="absolute top-2 left-2 bg-secondary text-white text-[10px] px-2 py-0.5 font-label-sm uppercase">Best Seller</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-label-sm text-on-surface-variant uppercase tracking-widest">Aves Elite Series</span>
+<h4 class="font-body-md text-body-md font-semibold text-primary leading-tight">Eagle-Eye 8x42 Binoculars</h4>
+<div class="flex items-center gap-1 text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star_half">star_half</span>
+<span class="text-[10px] text-on-surface-variant ml-1">(124)</span>
+</div>
+<p class="text-primary font-bold mt-2">$299.00</p>
+</div>
+<button class="mt-auto border border-primary text-primary py-2 text-label-sm font-label-sm hover:bg-primary hover:text-white transition-colors duration-200">
+                        Add to Cart
+                    </button>
+</div>
+<!-- Product 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-3 flex flex-col gap-3 group">
+<div class="relative aspect-square overflow-hidden bg-surface-variant">
+<img alt="Alpine Pro Scope" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional spotting scope mounted on a rugged carbon fiber tripod in a vast forest clearing. The lighting is diffused, suggesting an overcast day perfect for wildlife observation. The scope is colored in a dark obsidian and hunter green combination, with visible high-clarity glass lenses reflecting the sky. The scene is majestic and inspires a sense of professional exploration and reliable technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATOVKWs7PxQ-f90Y2e8qILgYMdyzFqo3-TKVCNbEkIpmHZdBbBbRLFoPB4lgWYQBHeo9po5vb4rDtA9xaink37AlX1mleGr3kGGVeJYMmcr-ayFXFxop5rcLOeawPI2AHlGowEu3_-opQBklWF5zEoWliTjOzBd5-CEQxLeCS_V0dcKzYelXZJGwk9f7roGlKYbeQ2kHtFe_brUtP2uHxbmibly4CdC1V7t_GeEqAxFwAyE_HTI5AKjJXCqCP-VKaibslCP6W5rfw"/>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-label-sm text-on-surface-variant uppercase tracking-widest">Summit Tech</span>
+<h4 class="font-body-md text-body-md font-semibold text-primary leading-tight">Alpine Pro Spotting Scope</h4>
+<div class="flex items-center gap-1 text-tertiary-container">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] text-on-surface-variant ml-1">(86)</span>
+</div>
+<p class="text-primary font-bold mt-2">$549.00</p>
+</div>
+<button class="mt-auto border border-primary text-primary py-2 text-label-sm font-label-sm hover:bg-primary hover:text-white transition-colors duration-200">
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trust Banner -->
+<section class="py-10 bg-primary-container text-on-primary-container px-margin-mobile flex flex-col gap-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="local_shipping">local_shipping</span>
+<div>
+<h5 class="font-bold text-surface-bright">Free Shipping</h5>
+<p class="text-label-sm text-on-primary-container/80">On all gear orders over $100</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="support_agent">support_agent</span>
+<div>
+<h5 class="font-bold text-surface-bright">Expert Support</h5>
+<p class="text-label-sm text-on-primary-container/80">Speak with seasoned birders</p>
+</div>
+</div>
+</section>
+<!-- Footer / Newsletter -->
+<footer class="bg-surface-container-highest py-12 px-margin-mobile">
+<div class="mb-8">
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Join the Flock</h4>
+<p class="text-body-md text-on-surface-variant mb-6">Receive gear guides and exclusive sightings in your inbox.</p>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface border border-outline px-4 py-3 text-label-md rounded focus:outline-none focus:border-primary" placeholder="Email Address" type="email"/>
+<button class="bg-primary text-white px-6 rounded font-label-md">Join</button>
+</div>
+</div>
+<div class="flex gap-6 mb-8">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="photo_camera">photo_camera</span>
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="near_me">near_me</span>
+</div>
+<p class="text-[12px] font-label-sm text-on-surface-variant">© 2024 AVES GEAR. Designed for the field.</p>
+</footer>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-2 pb-safe bg-surface border-t border-outline-variant/15 z-50">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 transition-all duration-200 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-all duration-200 active:scale-90 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<span class="text-label-sm font-label-sm">Gear</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-all duration-200 active:scale-90 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="text-label-sm font-label-sm">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 transition-all duration-200 active:scale-90 hover:bg-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+</body></html>
